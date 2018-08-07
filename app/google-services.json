@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1062385603470",
+    "firebase_url": "https://sworldrays.firebaseio.com",
+    "project_id": "sworldrays",
+    "storage_bucket": "sworldrays.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062385603470:android:e94e6f8062d35ea5",
+        "android_client_info": {
+          "package_name": "ml.rishabhnayak.sworldrays"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062385603470-7tobl5snbhrh8ekse5grqqpb6l74if8c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ml.rishabhnayak.sworldrays",
+            "certificate_hash": "ca957d4168431bd5485bb42cfa8c7876ff2d5731"
+          }
+        },
+        {
+          "client_id": "1062385603470-p701s7anav8548s4le4bctf12c36c11e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ml.rishabhnayak.sworldrays",
+            "certificate_hash": "508978331d8f0b4431566c144d83048715cbf098"
+          }
+        },
+        {
+          "client_id": "1062385603470-f00sam70u54blditj6ggo6nduucj8fa9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJFzKgANFPel-7s1ua6HN746XTIzPW7w8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062385603470-f00sam70u54blditj6ggo6nduucj8fa9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
