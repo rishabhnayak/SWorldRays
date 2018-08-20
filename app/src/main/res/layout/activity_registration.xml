@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="ml.rishabhnayak.sworldrays.RegistrationActivity">
+
+    <RelativeLayout
+        android:id="@+id/actionbar"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_marginLeft="3dp"
+            android:id="@+id/back_button"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/back_button"
+            android:text="Registration Form"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    <ScrollView
+        android:overScrollMode="always"
+        android:scrollIndicators="none"
+        android:scrollbars="none"
+        android:layout_below="@id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            app:cardCornerRadius="1dp"
+            app:cardElevation="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/input_layout_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="First Name*" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Middle Name/Father Name" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Last name*" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Postal Address(Permanent)*" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Postal Address(Temporary)" />
+
+                </android.support.design.widget.TextInputLayout>
+                <CheckBox
+                    android:textColor="@color/darkgray"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="10sp"
+                    android:text="Same as above address"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email Address" />
+
+                </android.support.design.widget.TextInputLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:inputType="number"
+                            android:drawablePadding="5dp"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-thin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="STD Code" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/dob_button"
+                        android:gravity="bottom"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="7.5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/dob"
+                            android:drawablePadding="5dp"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif-thin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Date of Birth*" />
+                        <TextView
+                            android:background="@color/darkgray"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:inputType="phone"
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Mobile No./Telephone No.*" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Profession*" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Education*" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="College/School" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-thin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Company" />
+
+                </android.support.design.widget.TextInputLayout>
+                <LinearLayout
+                    android:id="@+id/selector"
+                    android:orientation="vertical"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:elevation="3dp"
+                        android:layout_margin="3dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/student"
+                            app:cardBackgroundColor="@color/colorPrimary"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/student_text"
+                                android:padding="5dp"
+                                android:gravity="center_horizontal"
+                                android:textSize="15dp"
+                                android:text="MALE"
+                                android:textColor="@color/white"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </android.support.v7.widget.CardView>
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/trainer"
+                            app:cardBackgroundColor="@color/gray"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/trainer_text"
+                                android:padding="5dp"
+                                android:gravity="center_horizontal"
+                                android:text="FEMALE"
+                                android:textSize="15dp"
+                                android:textColor="@color/darkgray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+                <Button
+                    android:fontFamily="sans-serif"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="right"
+                    android:text="submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
