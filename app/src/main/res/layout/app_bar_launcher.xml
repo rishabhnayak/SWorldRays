@@ -10,11 +10,11 @@
     app:cardCornerRadius="0dp"
     app:cardBackgroundColor="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
+    android:layout_height="50dp">
     <RelativeLayout
         android:gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="50dp">
         <ImageView
             android:layout_centerVertical="true"
             android:layout_marginLeft="7dp"
@@ -23,17 +23,17 @@
             android:layout_width="30dp"
             android:layout_height="30dp" />
         <TextView
-            android:onClick="register"
             android:gravity="center_vertical"
+            android:onClick="register"
             android:textSize="16sp"
             android:layout_alignParentRight="true"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textColor="@color/white"
             android:text="Join Now"
-            android:background="@color/extradarkgray"
+            android:background="@color/colorPrimary"
             android:layout_width="wrap_content"
-            android:layout_height="40dp" />
+            android:layout_height="50dp" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>
     <include

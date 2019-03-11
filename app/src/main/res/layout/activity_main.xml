@@ -13,6 +13,6 @@
     android:layout_height="match_parent"
     >
 
-<include layout="@layout/test" ></include>
+<include layout="@layout/cards" ></include>
 
 </ScrollView>

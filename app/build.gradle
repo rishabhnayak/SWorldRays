@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -26,6 +30,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation 'com.github.f0ris.sweetalert:library:1.5.1'
     implementation 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.github.medyo:android-about-page:1.2.4'
     implementation 'com.github.ratty3697:android-smart-animation-library:1.6'
     implementation 'com.airbnb.android:lottie:2.5.5'
     implementation 'com.google.code.gson:gson:2.8.2'

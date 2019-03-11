@@ -65,4 +65,18 @@
     We are a young and energetic team of enthusiastic professionals who believe in innovative strategies and out-of-the-box solution for our clients. We aim to inspire, educate and help our customers thrive in an era where it has become vitally important to build strong customer relationships through digital marketing.</string>
     <string name="training">We have been building careers and developing corporate skill sets with our world-class training courses.\n\n
     Our leading edge approach of training and professional education includes workshops, professional education, executive coaching, hand-holding and customized training material created to suit the needs of the organization. As result our client see a measurable increase in employee performance, customer satisfaction and revenues.</string>
+
+    <string-array name="country_arrays">
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
+
+    <string name="success">{"success":"success"}</string>
+    <string name="aboutus"><![CDATA[S World-RAYS is a leading company in the field of professional training, Website designing, Software development, App development, Interior & Exterior designing, product designing for information technology providing a full range of high quality, cost effective IT solutions to business knowledge. We primarily deal with Information Technology Services, Staffing Solutions, and Corporate Training and also work as a consultancy firm.]]></string>
 </resources>

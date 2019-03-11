@@ -1,8 +1,11 @@
 package ml.rishabhnayak.sworldrays;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
@@ -22,19 +25,26 @@ import android.widget.ImageView;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
-
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 public class LauncherActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
-    ImageView wed_image,app_image,digital_image,soft_image,training_image;
-    ExpandableLayout appbar,image,text,appbar1,image1,text1,appbar2,image2,text2,appbar3,image3,text3,appbar4,image4,text4;
-
+    ImageView wed_image,app_image,digital_image,soft_image,training_image,seo_image;
+    ExpandableLayout appbar,image,text,appbar1,image1,text1,appbar2,image2,text2,appbar3,image3,text3,appbar4,image4,text4,appbar5,image5,text5;
+    String name,email,mobile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
+       try{
+           name=getIntent().getStringExtra("name");
+           email=getIntent().getStringExtra("email");
+           mobile=getIntent().getStringExtra("mobile");
+       }catch (Exception e){
+
+       }
 
        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -47,6 +57,7 @@ public class LauncherActivity extends AppCompatActivity
 
         blurImage();
         toggleall();
+        enquiry();
 
     }
 
@@ -56,7 +67,7 @@ public class LauncherActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            exit();
         }
     }
 
@@ -88,18 +99,45 @@ public class LauncherActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.home) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+            startActivity(new Intent(getApplicationContext(),GalleryActivity.class));
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.payment) {
+            Intent httpIntent = new Intent(Intent.ACTION_VIEW);
+            httpIntent.setData(Uri.parse("https://www.instamojo.com/@raysitworld/"));
 
-        } else if (id == R.id.nav_share) {
+            startActivity(httpIntent);
+        } else if (id == R.id.about) {
+           startActivity(new Intent(getApplicationContext(),AboutActivity.class));
+        }
+//        else if (id == R.id.whatsapp) {
+////            String toNumber = "+91 7000889041"; // contains spaces.
+////            toNumber = toNumber.replace("+", "").replace(" ", "");
+////
+////            Intent sendIntent = new Intent("android.intent.action.MAIN");
+////            sendIntent.putExtra("jid", toNumber + "@s.whatsapp.net");
+////            sendIntent.putExtra(Intent.EXTRA_TEXT, message);
+////            sendIntent.setAction(Intent.ACTION_SEND);
+////            sendIntent.setPackage("com.whatsapp");
+////            sendIntent.setType("text/plain");
+////            startActivity(sendIntent);
+//        }
+        else if (id == R.id.facebook) {
+            Intent httpIntent = new Intent(Intent.ACTION_VIEW);
+            httpIntent.setData(Uri.parse("https://www.facebook.com/raysitworld/"));
+            startActivity(httpIntent);
+        }
+        else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.logout) {
+            SharedPreferences preferences =getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.clear();
+            editor.commit();
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -124,7 +162,7 @@ public class LauncherActivity extends AppCompatActivity
 
         //Intrinsic Gausian blur filter
         ScriptIntrinsicBlur theIntrinsic = ScriptIntrinsicBlur.create(renderScript, Element.U8_4(renderScript));
-        theIntrinsic.setRadius(16);
+        theIntrinsic.setRadius(10);
         theIntrinsic.setInput(tmpIn);
         theIntrinsic.forEach(tmpOut);
         tmpOut.copyTo(outputBitmap);
@@ -232,7 +270,25 @@ public class LauncherActivity extends AppCompatActivity
             }
         });
 
-
+        appbar5=findViewById(R.id.appbar_expandable5);
+        image5=findViewById(R.id.image_extanded5);
+        text5=findViewById(R.id.text_extended5);
+        image5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appbar5.toggle();
+                image5.toggle();
+                text5.toggle();
+            }
+        });
+        appbar5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appbar5.toggle();
+                image5.toggle();
+                text5.toggle();
+            }
+        });
 
 
     }
@@ -266,10 +322,139 @@ public class LauncherActivity extends AppCompatActivity
         Bitmap bitmap4 = drawable4.getBitmap();
         Bitmap blurredBitmap4 = blur(bitmap4);
         digital_image.setImageBitmap(blurredBitmap4);
+
+        seo_image = findViewById(R.id.training_image5);
+        BitmapDrawable drawable5 = (BitmapDrawable) seo_image.getDrawable();
+        Bitmap bitmap5 = drawable5.getBitmap();
+        Bitmap blurredBitmap5 = blur(bitmap5);
+        seo_image.setImageBitmap(blurredBitmap5);
     }
 
     public void register(View view) {
         Intent intent=new Intent(getApplicationContext(),RegistrationActivity.class);
+      try{
+          intent.putExtra("name",name);
+          intent.putExtra("email",email);
+          intent.putExtra("mobile",mobile);
+      }catch (Exception e){
+
+      }
         startActivity(intent);
+    }
+    public void enquiry(){
+        findViewById(R.id.webdev_enquiry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),EnquiryActivity.class);
+                intent.putExtra("subject","WEBSITE DEVELOPMENT");
+                try{
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("mobile",mobile);
+                }catch (Exception e){
+
+                }
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.training_enquiry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),EnquiryActivity.class);
+                intent.putExtra("subject","TRAINING");
+                try{
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("mobile",mobile);
+                }catch (Exception e){
+
+                }
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.appdev_enquiry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),EnquiryActivity.class);
+                intent.putExtra("subject","APP DEVELOPMENT");
+                try{
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("mobile",mobile);
+                }catch (Exception e){
+
+                }
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.digmar_enquiry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),EnquiryActivity.class);
+                intent.putExtra("subject","DIGITAL MARKETING");
+                try{
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("mobile",mobile);
+                }catch (Exception e){
+
+                }
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.sofdev_enquiry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),EnquiryActivity.class);
+                intent.putExtra("subject","SOFTWARE DEVELOPMENT");
+                try{
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("mobile",mobile);
+                }catch (Exception e){
+
+                }
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.seo_enquiry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),EnquiryActivity.class);
+                intent.putExtra("subject","SEARCH ENGINE OPTIMISATION");
+                try{
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("mobile",mobile);
+                }catch (Exception e){
+
+                }
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void exit(){
+     SweetAlertDialog s  =   new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+                s.setTitleText("Are you sure? Want to exit!");
+                s.setCancelText("NO!");
+                s.setConfirmText("Yes!");
+                s.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                    s.cancel();
+                    }
+                });
+                s.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+                        sDialog.dismissWithAnimation();
+                        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                        homeIntent.addCategory( Intent.CATEGORY_HOME );
+                        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(homeIntent);
+                    }
+                });
+                s.show();
     }
 }

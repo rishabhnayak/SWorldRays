@@ -30,6 +30,7 @@
             android:layout_height="30dp" />
     </RelativeLayout>
     <ScrollView
+        android:id="@+id/main_layout"
         android:overScrollMode="always"
         android:scrollIndicators="none"
         android:scrollbars="none"
@@ -50,6 +51,23 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/pick_profile"
+                    android:visibility="gone"
+                    android:onClick="pickImage"
+                    app:civ_circle_background_color="@color/black_overlay"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_person_black_24dp"
+                    android:layout_gravity="center_horizontal"/>
+
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="0dp"
@@ -60,6 +78,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/first_name"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -77,6 +96,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/middle_name"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -94,6 +114,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/last_name"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -111,6 +132,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/permanent_address"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -129,6 +151,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/temporary_address"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -138,6 +161,7 @@
 
                 </android.support.design.widget.TextInputLayout>
                 <CheckBox
+                    android:id="@+id/same_address"
                     android:textColor="@color/darkgray"
                     android:fontFamily="sans-serif-condensed"
                     android:textSize="10sp"
@@ -157,6 +181,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/email"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -178,6 +203,7 @@
                         android:layout_height="wrap_content">
 
                         <EditText
+                            android:id="@+id/std_code"
                             android:inputType="number"
                             android:drawablePadding="5dp"
                             android:textSize="15sp"
@@ -223,6 +249,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/mobile_no."
                         android:inputType="phone"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
@@ -242,7 +269,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-
+                        android:id="@+id/profession"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -261,7 +288,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-
+                        android:id="@+id/education"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -279,7 +306,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-
+                        android:id="@+id/college"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -297,7 +324,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
-
+                        android:id="@+id/company"
                         android:drawablePadding="5dp"
                         android:textSize="15sp"
                         android:fontFamily="sans-serif-thin"
@@ -356,6 +383,7 @@
                     </LinearLayout>
                 </LinearLayout>
                 <Button
+                    android:id="@+id/submit_form"
                     android:fontFamily="sans-serif"
                     android:background="@color/colorPrimary"
                     android:textColor="@color/white"
@@ -372,5 +400,22 @@
 
     </ScrollView>
 
+    <android.support.v7.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/progress"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            app:lottie_rawRes="@raw/loading"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>
